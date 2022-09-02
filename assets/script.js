@@ -1,19 +1,17 @@
-// display current date and time
+// This function displays current date and time 
 $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm a"));
 
-//save button and input
-
-//save button and input
+// This funtion is the save button and input 
 $(document).ready(function () {
-    $(".save").on("click", function () {
+    $(".saveBtn").on("click", function () {
       var value = $(this).siblings(".input").val();
       var time = $(this).parent().attr("id");
   
- // saved input localStorage
+ // This funtion will save input to local storage 
     localStorage.setItem(time, value);
     });
 
-    // Reloads saved localstorage 
+ // This should reload saved localstorage 
     $("#hour-09 .input").val(localStorage.getItem("hour-09"));
     $("#hour-10 .input").val(localStorage.getItem("hour-10"));
     $("#hour-11 .input").val(localStorage.getItem("hour-11"));
@@ -24,11 +22,11 @@ $(document).ready(function () {
     $("#hour-16 .input").val(localStorage.getItem("hour-16"));
     $("#hour-17 .input").val(localStorage.getItem("hour-17"));
 
-//current hour 
+// This shows the current hour 
 function hourUpdater() {
     var currentHour = moment().hours();
 
-//time block loop
+// This is the time block loop 
   $(".time-block").each(function () {
   var blockHour = parseInt($(this).attr("id").split("-")[1]);
 
